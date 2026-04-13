@@ -1,0 +1,32 @@
+tenancy_ocid     = "ocid1.tenancy.oc1..exampleuniqueID"
+compartment_ocid = "ocid1.compartment.oc1..exampleuniqueID"
+region           = "ap-hyderabad-1"
+
+# Optional: override the first availability domain.
+# availability_domain = "kIdk:AP-HYDERABAD-1-AD-1"
+
+stack_name = "wordpress-ci-lb"
+
+# OCI VCNs do not support a single /12 CIDR. Use one or more /16-/30 CIDRs.
+vcn_cidrs         = ["172.16.0.0/16"]
+public_subnet_cidr  = "172.16.0.0/24"
+private_subnet_cidr = "172.16.1.0/24"
+
+container_instance_shape         = "CI.Standard.E4.Flex"
+container_instance_ocpus         = 1
+container_instance_memory_in_gbs = 4
+
+wordpress_image = "docker.io/library/wordpress:6.9.4-apache"
+mysql_image     = "docker.io/library/mysql:8.0"
+
+wordpress_db_name = "wordpress"
+wordpress_db_user = "wordpress"
+
+# Optional: set these yourself instead of using generated values.
+# mysql_password      = "ChangeMe1234567890"
+# mysql_root_password = "ChangeMeRoot1234567890"
+
+freeform_tags = {
+  Application = "wordpress"
+  ManagedBy   = "terraform"
+}
