@@ -1,2 +1,2 @@
 # Terraform
-Terraform Code for Multi-Cloud
+Terraform Code for OCI Cloud Services and Stack
