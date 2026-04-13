@@ -16,9 +16,7 @@ This stack creates:
 
 ## Important note about your requested VCN CIDR
 
-OCI does **not** support a single `/12` CIDR block for a VCN. OCI VCN CIDR blocks must be in the `/16` to `/30` range. Because of that, this stack uses `172.16.0.0/16` by default.
-
-If you need a larger address plan, add more supported CIDR blocks to `vcn_cidrs` and place your subnets inside one of those blocks.
+This stack uses `172.16.0.0/16` by default. You can change as per your VCN CIDR range.
 
 ## Files
 
